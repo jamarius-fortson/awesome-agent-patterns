@@ -117,6 +117,6 @@ Our dashboard is meticulously engineered to provide an "Expert-Level $50k" aesth
 **AgenticOS** is maintained by **Ismail Sajid & Team**.  
 *"Code is the foundation. Patterns are the design. AgenticOS is the standard."*
 
-[GitHub](https://github.com/Ismail-2001/awesome-agent-patterns) · [Documentation](docs/) · [Discussions](https://github.com/Ismail-2001/awesome-agent-patterns/discussions)
+[GitHub](https://github.com/jamarius-fortson/awesome-agent-patterns) · [Documentation](docs/) · [Discussions](https://github.com/jamarius-fortson/awesome-agent-patterns/discussions)
 
 </div>

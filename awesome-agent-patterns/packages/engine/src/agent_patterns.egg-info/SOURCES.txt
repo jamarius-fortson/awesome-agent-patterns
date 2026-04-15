@@ -1,0 +1,8 @@
+pyproject.toml
+src/agent_patterns/base.py
+src/agent_patterns/debate.py
+src/agent_patterns.egg-info/PKG-INFO
+src/agent_patterns.egg-info/SOURCES.txt
+src/agent_patterns.egg-info/dependency_links.txt
+src/agent_patterns.egg-info/requires.txt
+src/agent_patterns.egg-info/top_level.txt

@@ -1,0 +1,31 @@
+version: "3.9"
+# 🌌 AgenticOS: Professional Orchestration (Multi-Agent Cluster)
+
+services:
+  # 🧠 Intelligence Backend
+  aether-engine:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.backend
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_ENV=production
+      - API_KEY=expert_key_placeholder
+    restart: always
+
+  # 🖥️ Premium Dashboard
+  aether-ui:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - aether-engine
+    restart: always
+
+# Expert Connectivity: Standardized bridge networking
+networks:
+  default:
+    name: agentic-matrix

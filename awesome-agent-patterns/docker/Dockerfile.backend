@@ -1,0 +1,33 @@
+# 🌌 AgenticOS: Professional Backend Deployment (Expert Tier)
+# multi-agent orchestration engine & api
+
+FROM python:3.12-slim-bookworm
+
+# Expert Security: Run as non-root
+RUN groupadd -r aether && useradd -r -g aether aether-ops
+WORKDIR /app
+
+# System Dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Engine SDK first (Modular approach)
+COPY packages/engine /app/packages/engine
+RUN pip install --no-cache-dir -e /app/packages/engine
+
+# Install API dependencies
+COPY packages/api /app/packages/api
+RUN pip install --no-cache-dir fastapi uvicorn pydantic
+
+# Ownership adjustment
+RUN chown -R aether-ops:aether /app
+USER aether-ops
+
+# Networking
+EXPOSE 8000
+WORKDIR /app/packages/api/src
+
+# High-Performance Execution
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--workers", "4", "--log-level", "info"]
